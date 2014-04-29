@@ -10,4 +10,7 @@
 
 @interface mapViewController : UIViewController
 
+@property(weak,nonatomic)IBOutlet UILabel *geo;
+@property(weak,nonatomic)IBOutlet UILabel *distance;
+
 @end

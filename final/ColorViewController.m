@@ -7,6 +7,7 @@
 //
 
 #import "ColorViewController.h"
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
 @interface ColorViewController ()
 
@@ -27,12 +28,50 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)slide1:(id)sender {
+    //UISlider *slider = (UISlider *)sender;
+    self.slider1=(UISlider *)sender;
+    self.slider1.minimumValue = 0;
+    self.slider1.maximumValue = 255;
+    float val = self.slider1.value;
+    self.label1.text = [NSString stringWithFormat:@"%f",val];
+    [self setColor];
+    
+    
+}
+- (IBAction)slide2:(id)sender {
+    self.slider2=(UISlider *)sender;
+    self.slider2.minimumValue = 0;
+    self.slider2.maximumValue = 255;
+    float val = self.slider2.value;
+
+    self.label2.text = [NSString stringWithFormat:@"%f",val];
+    [self setColor];
+}
+- (IBAction)slide3:(id)sender {
+    self.slider3=(UISlider *)sender;
+    self.slider3.minimumValue = 0;
+    self.slider3.maximumValue = 255;
+    float val = self.slider3.value;
+    self.label3.text = [NSString stringWithFormat:@"%f",val];
+    [self setColor];
+}
+-(void)setColor{
+    //NSString *red=[NSString stringWithFormat:@"%@",self.label1.text];
+    double green=[[NSString stringWithFormat:@"%@",self.label2.text]floatValue];
+    double blue=[[NSString stringWithFormat:@"%@",self.label3.text]floatValue];
+    double red= [[NSString stringWithFormat:@"%@",self.label1.text] floatValue];
+    
+    [self.viewColor setBackgroundColor:RGB(red, green, blue)];
 }
 
 /*

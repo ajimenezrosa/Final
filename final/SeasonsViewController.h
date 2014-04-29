@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SeasonsViewController : UIViewController
+@property(weak,nonatomic)IBOutlet UITableView *table;
+
+@property(weak,nonatomic)IBOutlet UIView *contentView;
 
 @end
